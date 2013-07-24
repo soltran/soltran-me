@@ -3,33 +3,38 @@
 }
 
 
-.blue-back {
-  background-color: #0c243b;
-	
-}
+.teal-background {
+  background-color: #A9E2F3;
+  height: 100%; 
 
-
-.blue-back h3 {
-  color: white;
   
 }
 
-
-.padding-left {
-  padding-left: 5%;
+.vertical-center {
+  line-height: 2em;
+  font-size: 5em;
+  
 }
 
-
-.padding-bottom {
-  padding-bottom: 5%;
+.light-teal-background {
+  background-color: #2E9AFE;
+  height: 100%; 
 }
 
-
-.white-background {
-  background-color: white;
+.light-teal-background a {
+	color: black;
 }
 
-.content-work {
-  height: 70%;
-  overflow: scroll;
+.teal-background:hover {
+  background-color: #01DF3A;
+}
+
+.light-teal-background:hover {
+  background-color: #01DF3A;
+
+}
+
+.overflow-scroll {
+	overflow: scroll;
+	
 }

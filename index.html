@@ -12,20 +12,58 @@
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
       $(function() {
-              $(".js-tab").click(function(event){
-      			event.preventDefault();
-      			$('.js-tab').removeClass('active');
-      			$('.js-tab').addClass('disabled');
-      			var contentName = "." + this.id + "-content";
-      			$(this).addClass('active');
-      			$(".js-content").addClass('hidden');
-      			$(contentName).removeClass('hidden');
-      	      });
-      		});
+                    $(".js-tab").click(function(event){
+              		event.preventDefault();
+            			$('.js-tab').removeClass('active');
+            			$('.js-tab').addClass('disabled');
+            			var contentName = "." + this.id + "-content";
+            			$(this).addClass('active');
+            			$(".js-content").addClass('hidden');
+            			$(contentName).removeClass('hidden');
+            	      });
+                    $(".js-big-resume-btn").click(function(event){
+						event.preventDefault();
+						$('.js-home-btns').addClass('hidden');
+						$('.js-tabs').removeClass('hidden');
+						$('.js-resume-content').removeClass('hidden');
+                    
+                    });
+						$(".js-big-projects-btn").click(function(event){
+						event.preventDefault();
+						$('.js-home-btns').addClass('hidden');
+						$('.js-tabs').removeClass('hidden');
+						$('.js-tab').toggleClass('active');
+						$('.js-tab').toggleClass('disabled');
+						$('.js-projects-content').removeClass('hidden');
+
+                    });
+					$(".js-project-btn").click(function(event){
+						$(".js-project-btn").removeClass('light-teal-background');
+						$(".js-project-btn").addClass('teal-background');
+						$(this).addClass('light-teal-background');
+						$(this).removeClass('teal-background');
+						$(".js-iframe-content").addClass('hidden');
+						var iframeContent = ".js-" + this.id;
+						$(iframeContent).removeClass('hidden');
+						
+						
+					});
+					
+					
+       });
     </script>
+</script>
   </head>
   
   <body>
+    <title>Sol Tran</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <link rel="stylesheet" href="https://app.divshot.com/themes/spruce/bootstrap.css">
+    <link rel="stylesheet" href="https://app.divshot.com/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="https://djyhxgczejc94.cloudfront.net/builds/5ba7ef2ba47585f8a7c0a3b88a2414815e6ecc2f.css">
+    <link rel="stylesheet" href="https://app.divshot.com/css/divshot-util.css">
+    <link rel="stylesheet" href="https://app.divshot.com/css/divshot-canvas.css">
     <div class="navbar navbar-fixed-top"></div>
     <div class="media visible-phone">
       <a class="pull-left" href="#">
@@ -56,60 +94,87 @@
         </div>
       </div>
       <a></a>
-      <ul class="nav nav-tabs">
+      <ul class="nav nav-tabs js-tabs hidden">
         <li class="disabled js-tab" id="js-projects">
           <a href="#">Projects</a> 
         </li>
-        <li class="active js-tab" id="js-resume">
+        <li class="active js-tab" id="js-resume" style="">
           <a href="#">Resume</a> 
         </li>
       </ul>
+      <div class="row home-btns js-home-btns">
+        <div class="span6 home-btn js-home-btn js-big-projects-btn">
+          <div class="light-teal-background">
+            <h1 class="align-center vertical-center">Projects</h1>
+            <p></p>
+          </div>
+        </div>
+        <div class="home-btn js-home-btn js-big-resume-btn span6">
+          <div class="teal-background">
+            <p></p>
+            <h1 class="align-center vertical-center">Resume</h1>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="container white-background">
       <div class="container content-projects hidden js-content js-projects-content">
         <div class="some-background">
-          <a href="http://bit.ly/solresume" class="btn btn-info">Download PDF Copy</a>
           <br>
           <div class="row">
             <div class="span3">
-              <div class="padding-left padding-bottom">
+              <div class="padding-left padding-bottom js-project-btn light-teal-background" id='infiniteshirts'>
                 <h3>InfiniteShirts</h3>
                 <div class="visible-phone">
                   <img src="https://s3-us-west-1.amazonaws.com/infiniteprod/Screenshots/Screen+Shot+2013-07-23+at+9.15.03+AM.png"
                   style="">
                   <br> 
                 </div>
-                <a href="">Website</a>
+                <a href="http://infinitesuits.herokuapp.com/users/sign_up">Website</a>
                 <br>
-                <a href="">Github</a> 
+                <a href="http://github.com/soltran/InfiniteSuits">Github</a> 
               </div>
               <br>
-              <div class="padding-left padding-bottom">
+              <div class="padding-left padding-bottom js-project-btn teal-background" id='asteroids'>
                 <h3>Asteroids</h3>
                 <a href="http://soltran.github.io/Asteroids">Website</a>
                 <br>
-                <a href="">Github</a> 
+                <a href="http://github.com/soltran/Asteroids">Github</a> 
               </div>
               <br>
-              <div class="padding-left padding-bottom">
+              <div class="padding-left padding-bottom js-project-btn teal-background" id='hyuncello'>
                 <h3>Hyun Cello</h3>
                 <div class="visible-phone">
                   <img src="https://s3-us-west-1.amazonaws.com/infiniteprod/Screenshots/Screen+Shot+2013-07-23+at+9.16.20+AM.png"
                   style="">
                   <br> 
                 </div>
-                <a href="">Website</a>
-                <br>
-                <a href="">Github</a> 
+                <a href="http://hyuncello.com">Website</a>
               </div>
             </div>
-            <div class="hidden-phone span8" style="">
-              <iframe src="http://infinitesuits.herokuapp.com" width="100%" height="350px"></iframe>
+            <div class="hidden-phone span8 overflow-scroll js-iframe-content js-infiniteshirts" style="">
+				<h3>Project Description: </h3><div class='well'><p> 
+					Clone of 99dresses.com. Implemented primarily in Backbone.js and served by a RESTful Rails API. Uses JQuery and JQuery UI to provide a more interactive user experience. Also uses Backbone Relational to handle associations on the client-side. Authentication is done with Devise. Features include image uploading to AWS, the use of modals, virtual currency, filtering.<br>
+				
+				</p>
+			</div>
+              <iframe src="http://infinitesuits.herokuapp.com/users/sign_up" width="100%" height="350px"></iframe>
             </div>
-            <div class="hidden hidden-phone span9">
+            <div class="hidden hidden-phone span9 js-iframe-content js-asteroids">
+				<h3>Project Description: </h3><div class='well'><p> 
+					This game uses pure javascript logic where a user can navigate a ship to shoot down asteroids<br>
+				
+				</p>
+			</div>
               <iframe src="http://soltran.github.io/Asteroids" width="100%" height="350px"></iframe>
             </div>
-            <div class="hidden hidden-phone span9" style="">
+            <div class="hidden hidden-phone span9 js-iframe-content js-hyuncello" style="">
+				<h3>Project Description: </h3><div class='well'><p> 
+					Wordpress website built for professional celloist Paul Hyun<br>
+				
+				</p>
+			</div>
+				
               <iframe src="http://hyuncello.com" width="100%" height="350px"></iframe>
             </div>
           </div>
@@ -118,7 +183,7 @@
         </div>
       </div>
       <br>
-      <div class="container content-work js-content js-resume-content align-center">
+      <div class="container content-work js-content js-resume-content align-center hidden">
         <a href="http://bit.ly/solresume" class="btn pull-left btn-info">Download PDF Copy</a>
         <br>
         <br>
@@ -260,5 +325,6 @@
       </div>
     </div>
   </body>
+  
 
 </html>
