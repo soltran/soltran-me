@@ -1,0 +1,35 @@
+.main-features {
+  margin-top: 10px;      
+}
+
+
+.blue-back {
+  background-color: #0c243b;
+	
+}
+
+
+.blue-back h3 {
+  color: white;
+  
+}
+
+
+.padding-left {
+  padding-left: 5%;
+}
+
+
+.padding-bottom {
+  padding-bottom: 5%;
+}
+
+
+.white-background {
+  background-color: white;
+}
+
+.content-work {
+  height: 70%;
+  overflow: scroll;
+}
