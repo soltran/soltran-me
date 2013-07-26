@@ -38,3 +38,17 @@
 	overflow: scroll;
 	
 }
+
+#myModal .modal-body {
+	max-height: 800px;
+}
+
+#myModal {
+	width: 80%; /* SET THE WIDTH OF THE MODAL */
+	margin: 0 0 0 -40%;
+}
+
+.background-white {
+	background-color: white !important;
+	
+}
